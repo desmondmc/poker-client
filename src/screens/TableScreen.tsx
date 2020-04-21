@@ -3,7 +3,6 @@ import { extractHand, isSameCard, Cards } from "@pairjacks/poker-cards";
 import styled from "styled-components";
 
 import { useStore } from "../state/store";
-import ConnectionStatus from "../components/ConnectionStatus";
 import Seat from "../components/Seat";
 import ChipBall from "../components/ChipBall";
 import CardPile from "../components/CardPile";
@@ -53,9 +52,6 @@ const TableScreen: FCWithoutChildren = () => {
 
   return (
     <Container>
-      <TopRight>
-        <ConnectionStatus />
-      </TopRight>
       <PotsContainer>
         <StartContainer>
           {!table.isStarted && (
@@ -155,13 +151,6 @@ const Container = styled.div`
 const StartContainer = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const TopRight = styled.div`
-  display: block;
-  position: absolute;
-  right: 2em;
-  top: 1em;
 `;
 
 const PotsContainer = styled.div`

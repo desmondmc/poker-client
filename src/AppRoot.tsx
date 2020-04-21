@@ -7,6 +7,7 @@ import TableScreen from "./screens/TableScreen";
 import CreateTableScreen from "./screens/CreateTableScreen";
 
 import type { FCWithoutChildren } from "./types/component";
+import ConnectionStatus from "./components/ConnectionStatus";
 
 const AppRoot: FCWithoutChildren = () => {
   const store = useStore();
@@ -20,6 +21,7 @@ const AppRoot: FCWithoutChildren = () => {
     <Container>
       <AppBarContainer>
         <ChangeThemeButton onClick={changeTheme}>{"😈 / 👼"}</ChangeThemeButton>
+        <ConnectionStatus />
       </AppBarContainer>
       <ScreenContainer>
         {store.data.table ? (
@@ -42,8 +44,10 @@ const Container = styled.div`
 
 const AppBarContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
   flex: 0 0;
+  padding-right: 1em;
 `;
 
 const ScreenContainer = styled.div`

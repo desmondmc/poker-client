@@ -1,8 +1,5 @@
 import React, { useReducer, useCallback } from "react";
 import styled from "styled-components";
-
-import ConnectionStatus from "../components/ConnectionStatus";
-
 import type { Reducer, FormEventHandler, ChangeEventHandler } from "react";
 import type { FCWithoutChildren } from "../types/component";
 import type { CreateTableOptions } from "../state/store";
@@ -82,7 +79,6 @@ const CreateTableScreen: FCWithoutChildren<{
 
   return (
     <Container>
-      <ConnectionStatus />
       <Title>Create Table</Title>
       <CreateTableForm onSubmit={handleSubmit}>
         <FormItem>
